@@ -1,17 +1,18 @@
-require("now-env");
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const { json } = require("body-parser");
-const port = 3005;
 const app = express();
-//, config = require('./config')
-//, session = require('express-session')
-// , massive = require('massive')
-// require('dotenv').config()
+const massive = require("massive");
 
-// massive(process.env.CONNECTION_STRING).then(db => app.set('db', db)).catch(console.log)
+const { PORT, CONNECTION_STRING } = process.env;
 
-// app.use(session(config.session) );
+const port = PORT || 3005;
+
+massive(CONNECTION_STRING)
+  .then(db => app.set("db", db))
+  .catch(console.log);
+
 app.use(cors());
 app.use(json());
 app.listen(port, function() {
