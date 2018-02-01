@@ -22,6 +22,7 @@ class Footer extends Component {
         </div>
         <div>{temp}</div>
     
+    
       </div>
     )
   }
