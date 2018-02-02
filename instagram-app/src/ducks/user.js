@@ -3,6 +3,7 @@ import { API_HOST } from "react-native-dotenv";
 
 const initialState = {
   user: {},
+  email: "",
   isLoading: false,
   didError: false
 };
@@ -10,6 +11,7 @@ const initialState = {
 // ACTION TYPES
 
 const LOGIN = "LOGIN";
+const SAVE_EMAIL = "SAVE_EMAIL";
 
 // ACTION CREATOR
 
@@ -20,6 +22,13 @@ export function handleLogin(email, password) {
       .post(`${API_HOST}/api/login`, { email, password })
       .then(res => res.data)
       .catch(console.log)
+  };
+}
+
+export function saveEmail(email) {
+  return {
+    type: SAVE_EMAIL,
+    payload: email
   };
 }
 
@@ -42,6 +51,11 @@ export default function user(state = initialState, action = {}) {
       return Object.assign({}, state, {
         isLoading: false,
         didError: true
+      });
+    // SAVE EMAIL TEMPORARY
+    case SAVE_EMAIL:
+      return Object.assign({}, state, {
+        email: action.payload
       });
 
     default:

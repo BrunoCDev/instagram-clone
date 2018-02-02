@@ -57,6 +57,7 @@ class LogIn extends Component {
   }
 
   render(props) {
+    const { footer } = this.state;
     return (
       <Container style={styles.container}>
         <Text style={{ textAlign: "center", color: "#bababa", paddingTop: 20 }}>
@@ -100,7 +101,9 @@ class LogIn extends Component {
             <Body>
               <View style={styles.textStyle}>
                 <Text style={styles.text}>Don't have an account?</Text>
-                <TouchableWithoutFeedback>
+                <TouchableWithoutFeedback
+                  onPress={() => this.props.navigation.navigate("SignUp")}
+                >
                   <Text style={styles.helpButton}>Sign up.</Text>
                 </TouchableWithoutFeedback>
               </View>

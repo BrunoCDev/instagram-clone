@@ -1,6 +1,8 @@
 import { StackNavigator, TabNavigator } from "react-navigation";
 
 import LogIn from "./screens/LogIn/LogIn";
+import SignUp from "./screens/SignUp/SignUp";
+import CreateAccount from "./screens/CreateAccount/CreateAccount";
 import Home from "./screens/Home/Home";
 
 export const createRootNavigator = (signedIn = false) => {
@@ -32,6 +34,18 @@ export const createRootNavigator = (signedIn = false) => {
 export const SignedOut = StackNavigator({
   LogIn: {
     screen: LogIn,
+    navigationOptions: {
+      headerStyle: { height: 0 }
+    }
+  },
+  SignUp: {
+    screen: SignUp,
+    navigationOptions: {
+      headerStyle: { height: 0 }
+    }
+  },
+  CreateAccount: {
+    screen: CreateAccount,
     navigationOptions: {
       headerStyle: { height: 0 }
     }
