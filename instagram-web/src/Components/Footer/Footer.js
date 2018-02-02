@@ -20,7 +20,7 @@ class Footer extends Component {
                 )
             })}
         </div>
-        <div>{temp}</div>
+        <div className="copyright">{temp}</div>
     
 
     

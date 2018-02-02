@@ -1,3 +1,10 @@
+a {
+    color:#003569;
+    font-weight: bold;
+    text-decoration-line: none;
+    
+}
+
 .Footer {
     display: flex;
     flex-direction: row;
@@ -18,5 +25,11 @@
     text-align: start;
     width: 698.97px;
     height: 25px;
+}
+
+.copyright {
+    color: #999999;
+    font-size: 12px;
+    
 }
 
