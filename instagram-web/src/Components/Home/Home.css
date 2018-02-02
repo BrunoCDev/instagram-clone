@@ -1,0 +1,146 @@
+.homepage {
+    width:935px;
+}
+
+
+.right-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:348px;
+    height:518px;
+    
+}
+
+.field{
+    width: 256px;
+    height: 36px;
+    background-color: "#f2f2f2";
+    border-radius: 5;
+    border-width: 1;
+    border-color: "#cecece";
+}
+
+.main-logo-top{
+    height:51px;
+    width: 175px;
+    margin-top:22px;
+    margin-right:86.50px;
+    margin-bottom:10px;
+    margin-left:86.50px;
+}
+.logo-pic{
+    width:100%;
+    height:100%;
+}
+.sign-up-to-see {
+    width: 268px;
+    height: 40px;
+    color:#999999;
+    font-size: 17px;
+    line-height:20px;
+    margin-right: 40px;
+    margin-bottom:10px;
+    margin-left: 40px;
+    text-align: center;
+    font-weight: 600;
+    
+}
+.blue-facebook {
+    width: 348px;
+    height: 44px;
+
+}
+.blue-button {
+    width: 268px;
+    height: 26px;
+    background-color:rgb(56, 151, 240);
+    padding-right: 8px;
+    padding-left: 8px;
+    border: 1px;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 26px;
+    color: white;
+    font-weight: 600;
+}
+.or-box {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 268px;
+    height: 15px;
+    margin-top: 10px;
+    margin-right: 40px;
+    margin-bottom: 18px;
+    margin-left: 40px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.divider {
+    width: 106px;
+    height: 1px;
+    background-color: #999999;
+}
+
+.center-or {
+    font-size: 13px;
+    line-height: 15px;
+    color:#999999;
+
+}
+
+.bottom-terms {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #999999;
+    height: 36px;
+    width: 228px;
+    margin: 10px 60px 10px 60px;
+}
+
+input {
+    width:250px;
+    height:20px;
+    padding: 9px 0px 7px 8px;
+}
+
+.input-holders{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-bottom-app-buttons {
+    width: 350px;
+    height:44px;
+    margin: 0px 10px 0px 10px;
+}
+
+.bottom-button {
+    width: 138px;
+    height:40px;
+}
+.button-pic{
+    height:100%;
+    width: 100%;
+}
+.right-bottom-app-buttons {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    width:348px;
+}
+.right-div-two{
+    width:348px;
+    
+}
+.right-div-one{
+    border: 1px solid #e6e6e6;
+}
+.login {
+    border: 1px solid #e6e6e6;
+}
