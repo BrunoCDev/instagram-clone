@@ -3,29 +3,59 @@ import { API_HOST } from "react-native-dotenv";
 
 const initialState = {
   user: {},
-  test: false
+  email: "",
+  isLoading: false,
+  didError: false
 };
 
 // ACTION TYPES
 
-const TEST = "TEST";
+const LOGIN = "LOGIN";
+const SAVE_EMAIL = "SAVE_EMAIL";
 
 // ACTION CREATOR
 
-export function tester() {
+export function handleLogin(email, password) {
   return {
-    type: TEST,
-    payload: true
+    type: LOGIN,
+    payload: axios
+      .post(`${API_HOST}/api/login`, { email, password })
+      .then(res => res.data)
+      .catch(console.log)
+  };
+}
+
+export function saveEmail(email) {
+  return {
+    type: SAVE_EMAIL,
+    payload: email
   };
 }
 
 // REDUCER
 export default function user(state = initialState, action = {}) {
   switch (action.type) {
-    // TEST
-    case TEST:
+    // LOGIN
+    case `${LOGIN}_PENDING`:
       return Object.assign({}, state, {
-        test: action.payload
+        isLoading: true
+      });
+
+    case `${LOGIN}_FULFILLED`:
+      return Object.assign({}, state, {
+        isLoading: false,
+        user: action.payload
+      });
+
+    case `${LOGIN}_REJECTED`:
+      return Object.assign({}, state, {
+        isLoading: false,
+        didError: true
+      });
+    // SAVE EMAIL TEMPORARY
+    case SAVE_EMAIL:
+      return Object.assign({}, state, {
+        email: action.payload
       });
 
     default:
