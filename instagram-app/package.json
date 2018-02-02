@@ -10,6 +10,7 @@
     "test": "node node_modules/jest/bin/jest.js --watch"
   },
   "dependencies": {
+    "apsl-react-native-button": "3.1.0",
     "axios": "0.17.1",
     "native-base": "2.3.7",
     "react": "16.2.0",
