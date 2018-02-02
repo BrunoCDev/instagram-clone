@@ -91,16 +91,29 @@ class Home extends Component {
             </div>
           </div>
           <div className="right-div-two">
-          <div className="login">
-            Have an account? <a href="">Log in</a>
-          </div>
-          <div className="get-the-app">
-            <p>Get the app.</p><br/>
-            <div className="right-bottom-app-buttons">
-            <img src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_english-en.png/4b70f6fae447.png" alt=""/>
-            <img src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/f06b908907d5.png" alt=""/>
+            <div className="login">
+              Have an account? <a href="">Log in</a>
             </div>
-          </div>
+            <div className="get-the-app">
+              <p>Get the app.</p>
+              <br />
+              <div className="right-bottom-app-buttons">
+                <div className="bottom-button">
+                  <img
+                    className="button-pic"
+                    src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_english-en.png/4b70f6fae447.png"
+                    alt=""
+                  />
+                </div>
+                <div className="bottom-button">
+                  <img
+                    className="button-pic"
+                    src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/f06b908907d5.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@
     align-items: center;
     width:348px;
     height:518px;
-    border: 1px solid black;
+    
 }
 
 .field{
@@ -112,4 +112,35 @@ input {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.right-bottom-app-buttons {
+    width: 350px;
+    height:44px;
+    margin: 0px 10px 0px 10px;
+}
+
+.bottom-button {
+    width: 138px;
+    height:40px;
+}
+.button-pic{
+    height:100%;
+    width: 100%;
+}
+.right-bottom-app-buttons {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    width:348px;
+}
+.right-div-two{
+    width:348px;
+    
+}
+.right-div-one{
+    border: 1px solid #e6e6e6;
+}
+.login {
+    border: 1px solid #e6e6e6;
 }
