@@ -26,7 +26,6 @@ const createAccount = (req, res, next) => {
     db
       .createAccount([fullName, hash, email, username])
       .then(response => {
-        console.log("first");
         res.json(response[0]);
       })
       .catch(() =>
@@ -56,7 +55,17 @@ const createUsername = (req, res, next) => {
   db
     .createUsername([username, id])
     .then(response => {
-      console.log(response[0]);
+      res.json(response[0]);
+    })
+    .catch(console.log);
+};
+
+const updateUsername = (req, res, next) => {
+  const db = req.app.get("db");
+  const { username, id } = req.body;
+  db
+    .updateUsername([username, id])
+    .then(response => {
       res.json(response[0]);
     })
     .catch(console.log);
@@ -66,5 +75,6 @@ module.exports = {
   login,
   createAccount,
   checkUsername,
-  createUsername
+  createUsername,
+  updateUsername
 };

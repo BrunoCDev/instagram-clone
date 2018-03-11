@@ -20,6 +20,7 @@ app.post("/api/users/login", uc.login);
 app.post("/api/users/create", uc.createAccount);
 app.get("/api/users/check/:username", uc.checkUsername);
 app.post("/api/users/username/create", uc.createUsername);
+app.post("/api/users/username/update", uc.updateUsername);
 
 app.listen(port, function() {
   console.log("Server listening on port", port);

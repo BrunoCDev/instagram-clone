@@ -16,6 +16,7 @@ const SAVE_EMAIL = "SAVE_EMAIL";
 const CREATE_ACCOUNT = "CREATE_ACCOUNT";
 const CHECK_USERNAME = "CHECK_USERNAME";
 const CREATE_USERNAME = "CREATE_USERNAME";
+const UPDATE_USERNAME = "UPDATE_USERNAME";
 
 // ACTION CREATOR
 
@@ -61,6 +62,16 @@ export function createUsername(username, id) {
     type: CREATE_USERNAME,
     payload: axios
       .post(`${API_HOST}/api/users/username/create`, { username, id })
+      .then(res => res.data)
+      .catch(console.log)
+  };
+}
+
+export function updateUsername(username, id) {
+  return {
+    type: UPDATE_USERNAME,
+    payload: axios
+      .post(`${API_HOST}/api/users/username/update`, { username, id })
       .then(res => res.data)
       .catch(console.log)
   };
@@ -142,6 +153,24 @@ export default function user(state = initialState, action = {}) {
       });
 
     case `${CREATE_USERNAME}_REJECTED`:
+      return Object.assign({}, state, {
+        isLoading: false,
+        didError: true
+      });
+
+    // CREATE USERNAME
+    case `${UPDATE_USERNAME}_PENDING`:
+      return Object.assign({}, state, {
+        isLoading: true
+      });
+
+    case `${UPDATE_USERNAME}_FULFILLED`:
+      return Object.assign({}, state, {
+        isLoading: false,
+        user: { ...state.user, username: action.payload.username }
+      });
+
+    case `${UPDATE_USERNAME}_REJECTED`:
       return Object.assign({}, state, {
         isLoading: false,
         didError: true

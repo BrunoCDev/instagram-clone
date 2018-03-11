@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { View, Text, TextInput } from "react-native";
 import Button from "apsl-react-native-button";
 import { Container, Content, Body, Left, Right, Icon } from "native-base";
-import { checkUsername } from "../../ducks/user";
+import { checkUsername, updateUsername } from "../../ducks/user";
 
 class UsernameChange extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class UsernameChange extends Component {
       wrongUsername: false
     };
     this.handleUsername = this.handleUsername.bind(this);
-    this.createUsername = this.createUsername.bind(this);
+    this.updateUsername = this.updateUsername.bind(this);
   }
 
   componentDidMount() {
@@ -25,6 +25,7 @@ class UsernameChange extends Component {
   }
 
   handleUsername(val) {
+    this.setState({ wrongUsername: true });
     setTimeout(
       () =>
         this.props
@@ -43,13 +44,11 @@ class UsernameChange extends Component {
     );
   }
 
-  createUsername() {
-    const { username, wrongUsername } = this.state;
+  updateUsername() {
+    const { username } = this.state;
     const { navigate } = this.props.navigation;
-    const { id } = this.props.user.id;
-    if (!wrongUsername) {
-      this.props.createUsername(username, id).then(() => navigate("Home"));
-    }
+    const { id } = this.props.user;
+    this.props.updateUsername(username, id).then(() => navigate("Welcome"));
   }
 
   render() {
@@ -83,7 +82,11 @@ class UsernameChange extends Component {
                 />
               )}
             </View>
-            <Button style={styles.button} isDisabled={this.state.wrongUsername}>
+            <Button
+              style={styles.button}
+              isDisabled={this.state.wrongUsername}
+              onPress={() => this.updateUsername()}
+            >
               <Text style={styles.buttonText}>Next</Text>
             </Button>
           </Body>
@@ -95,4 +98,6 @@ class UsernameChange extends Component {
 
 const mapStateToProps = state => state;
 
-export default connect(mapStateToProps, { checkUsername })(UsernameChange);
+export default connect(mapStateToProps, { checkUsername, updateUsername })(
+  UsernameChange
+);

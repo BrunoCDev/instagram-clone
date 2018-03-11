@@ -7,6 +7,9 @@ import { connect } from "react-redux";
 class Welcome extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      username: this.props.user.username
+    };
 
     this.handleSave = this.handleSave.bind(this);
     this.changeUsername = this.changeUsername.bind(this);
@@ -27,7 +30,8 @@ class Welcome extends Component {
   }
 
   render() {
-    const { username } = this.props.user;
+    console.log(this.props.user);
+    const { username } = this.state;
     return (
       <View style={styles.background}>
         <View style={styles.header}>
