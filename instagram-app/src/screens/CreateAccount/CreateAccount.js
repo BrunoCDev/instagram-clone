@@ -61,7 +61,6 @@ class CreateAccount extends Component {
       this.props
         .createAccount(fullName, password, this.props.email)
         .then(res => {
-          console.log(res);
           res.value.id > -1
             ? AsyncStorage.setItem("user", res.value.id.toString())
                 .then(() => navigate("Welcome"))
@@ -97,6 +96,7 @@ class CreateAccount extends Component {
             <View>
               <TextInput
                 placeholder="Password"
+                secureTextEntry
                 style={wrongPassword ? styles.inputWrong : styles.input}
                 underlineColorAndroid="transparent"
                 onChangeText={this.handlePassword}

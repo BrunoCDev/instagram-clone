@@ -25,12 +25,22 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: 40
   },
+  loginButtonEnabled: {
+    marginTop: 15,
+    width: 300,
+    height: 55,
+    backgroundColor: "#73beff",
+    borderColor: "#d2eaff"
+  },
   loginButton: {
     marginTop: 15,
     width: 300,
     height: 55,
     backgroundColor: "white",
     borderColor: "#d2eaff"
+  },
+  loginTextEnabled: {
+    color: "white"
   },
   loginText: {
     color: "#d2eaff"

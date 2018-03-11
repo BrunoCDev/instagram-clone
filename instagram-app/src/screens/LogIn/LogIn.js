@@ -57,7 +57,7 @@ class LogIn extends Component {
   }
 
   render(props) {
-    const { footer } = this.state;
+    const { password, email } = this.state;
     return (
       <Container style={styles.container}>
         <Text style={{ textAlign: "center", color: "#bababa", paddingTop: 20 }}>
@@ -81,11 +81,28 @@ class LogIn extends Component {
             <TextInput
               underlineColorAndroid="transparent"
               placeholder="Password"
+              secureTextEntry={true}
               style={styles.input}
               onChangeText={this.handlePassword}
             />
-            <Button style={styles.loginButton} onPress={this.handleLogin}>
-              <Text style={styles.loginText}>Log in</Text>
+            <Button
+              style={
+                email.length && password.length
+                  ? styles.loginButtonEnabled
+                  : styles.loginButton
+              }
+              onPress={this.handleLogin}
+              isDisabled={email.length && password.length ? false : true}
+            >
+              <Text
+                style={
+                  email.length && password.length
+                    ? styles.loginTextEnabled
+                    : styles.loginText
+                }
+              >
+                Log in
+              </Text>
             </Button>
             <View style={styles.loginTextStyle}>
               <Text style={styles.text}>Forgot your login details?</Text>
