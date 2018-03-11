@@ -16,7 +16,10 @@ massive(CONNECTION_STRING)
 app.use(cors());
 app.use(json());
 
-app.post("/api/login", uc.login);
+app.post("/api/users/login", uc.login);
+app.post("/api/users/create", uc.createAccount);
+app.get("/api/users/check/:username", uc.checkUsername);
+app.post("/api/users/username/create", uc.createUsername);
 
 app.listen(port, function() {
   console.log("Server listening on port", port);

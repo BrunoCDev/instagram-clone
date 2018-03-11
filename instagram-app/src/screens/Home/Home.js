@@ -10,7 +10,7 @@ class Home extends Component {
 
   handleLogout() {
     const { navigate } = this.props.navigation;
-    AsyncStorage.setItem("user", "").then(() => {
+    AsyncStorage.setItem("user", "").then(res => {
       navigate("LogIn");
     });
   }
