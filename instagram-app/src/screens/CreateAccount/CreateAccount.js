@@ -25,6 +25,7 @@ import Button from "apsl-react-native-button";
 import { Divider } from "react-native-elements";
 import { connect } from "react-redux";
 import { styles } from "./CreateAccountStyles";
+import { createAccount } from "./../../ducks/user";
 
 class CreateAccount extends Component {
   constructor(props) {
@@ -50,14 +51,24 @@ class CreateAccount extends Component {
 
   handleCreate() {
     const { fullName, password, wrongPassword, wrongFullName } = this.state;
+    const { navigate } = this.props.navigation;
     if (fullName.length === 0) {
       this.setState({ wrongFullName: true });
     } else if (password.length < 7) {
       this.setState({ wrongPassword: true });
     } else {
       this.setState({ wrongPassword: false, wrongFullName: false });
-      console.log("hit");
-      // DOING SOON
+      this.props
+        .createAccount(fullName, password, this.props.email)
+        .then(res => {
+          console.log(res);
+          res.value.id > -1
+            ? AsyncStorage.setItem("user", res.value.id.toString())
+                .then(() => navigate("Welcome"))
+                .catch(console.log)
+            : Alert.alert("Problem", "Something went wrong!");
+        })
+        .catch(console.log);
     }
   }
 
@@ -126,4 +137,4 @@ class CreateAccount extends Component {
 
 const mapStateToProps = state => state;
 
-export default connect(mapStateToProps)(CreateAccount);
+export default connect(mapStateToProps, { createAccount })(CreateAccount);

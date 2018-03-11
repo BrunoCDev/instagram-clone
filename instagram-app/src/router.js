@@ -4,6 +4,8 @@ import LogIn from "./screens/LogIn/LogIn";
 import SignUp from "./screens/SignUp/SignUp";
 import CreateAccount from "./screens/CreateAccount/CreateAccount";
 import Home from "./screens/Home/Home";
+import Welcome from "./screens/Welcome/Welcome";
+import UsernameChange from "./screens/UsernameChange/UsernameChange";
 
 export const createRootNavigator = (signedIn = false) => {
   return StackNavigator(
@@ -46,6 +48,18 @@ export const SignedOut = StackNavigator({
   },
   CreateAccount: {
     screen: CreateAccount,
+    navigationOptions: {
+      headerStyle: { height: 0 }
+    }
+  },
+  Welcome: {
+    screen: Welcome,
+    navigationOptions: {
+      headerStyle: { height: 0 }
+    }
+  },
+  UsernameChange: {
+    screen: UsernameChange,
     navigationOptions: {
       headerStyle: { height: 0 }
     }
