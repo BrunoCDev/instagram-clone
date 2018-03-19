@@ -87,10 +87,12 @@ export default function user(state = initialState, action = {}) {
       });
 
     case `${LOGIN}_FULFILLED`:
-      return Object.assign({}, state, {
-        isLoading: false,
-        user: action.payload
-      });
+      if (action.payload) {
+        return Object.assign({}, state, {
+          isLoading: false,
+          user: action.payload
+        });
+      }
 
     case `${LOGIN}_REJECTED`:
       return Object.assign({}, state, {

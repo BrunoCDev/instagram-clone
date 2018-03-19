@@ -17,7 +17,8 @@ import {
   View,
   TouchableWithoutFeedback,
   Image,
-  AsyncStorage
+  AsyncStorage,
+  Alert
 } from "react-native";
 import Button from "apsl-react-native-button";
 import { Divider } from "react-native-elements";
@@ -50,9 +51,17 @@ class LogIn extends Component {
     const { email, password } = this.state;
     const { navigate } = this.props.navigation;
     this.props.handleLogin(email, password).then(res => {
-      AsyncStorage.setItem("user", res.value.id.toString()).then(() =>
-        navigate("Home")
-      );
+      if (res.value) {
+        try {
+          AsyncStorage.setItem("user", res.value.id.toString());
+          navigate("Home");
+        } catch (error) {
+          console.log(error);
+          Alert.alert("Something went wrong", "Please try again!");
+        }
+      } else {
+        Alert.alert("Something went wrong", "Username/Password not found!");
+      }
     });
   }
 

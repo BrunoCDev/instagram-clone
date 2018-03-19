@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, Button, AsyncStorage } from "react-native";
+import { styles } from "./HomeStyles";
+import Nav from "./components/nav/Nav";
 
 class Home extends Component {
   constructor(props) {
@@ -17,8 +19,8 @@ class Home extends Component {
 
   render() {
     return (
-      <View>
-        <Text>Hello</Text>
+      <View style={styles.container}>
+        <Nav />
         <Button title="Logout" onPress={this.handleLogout} />
       </View>
     );

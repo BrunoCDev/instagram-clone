@@ -14,10 +14,15 @@ export default class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    AsyncStorage.getItem("user").then(result => {
-      this.setState({ signedIn: result, loading: false });
-    });
+  async componentDidMount() {
+    try {
+      let value = await AsyncStorage.getItem("user");
+      if (value !== null) {
+        this.setState({ signedIn: value, loading: false });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   render() {
