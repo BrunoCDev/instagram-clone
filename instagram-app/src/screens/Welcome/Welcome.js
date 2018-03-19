@@ -30,7 +30,6 @@ class Welcome extends Component {
   }
 
   render() {
-    console.log(this.props.user);
     const { username } = this.state;
     return (
       <View style={styles.background}>

@@ -7,14 +7,10 @@ const login = (req, res, next) => {
     .login([email])
     .then(response => {
       bcrypt.compare(password, response[0].password, function(err, confirm) {
-        if (confirm === true) {
-          res.json(response[0]);
-        } else {
-          return null;
-        }
+        res.json(response[0]);
       });
     })
-    .catch(console.log);
+    .catch(() => res.json(false));
 };
 
 const createAccount = (req, res, next) => {
@@ -31,10 +27,7 @@ const createAccount = (req, res, next) => {
       .catch(() =>
         db
           .createAccountWithoutUsername([fullName, hash, email])
-          .then(response => {
-            console.log("second");
-            res.json(response[0]);
-          })
+          .then(response => res.json(response[0]))
           .catch(console.log)
       );
   });
