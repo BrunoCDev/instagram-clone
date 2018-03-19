@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-import { View, Text, Button, AsyncStorage } from "react-native";
+import { View, Text, Button, AsyncStorage, Image } from "react-native";
 import { styles } from "./HomeStyles";
 import Nav from "./components/nav/Nav";
+
+import { Divider } from "react-native-elements";
+import watchIcon from "./../../assets/images/watchIcon.png";
 
 class Home extends Component {
   constructor(props) {
@@ -21,6 +24,21 @@ class Home extends Component {
     return (
       <View style={styles.container}>
         <Nav />
+        <Divider style={styles.divider} />
+        <View style={styles.storiesContainer}>
+          <View style={styles.textContainer}>
+            <View style={styles.storiesTextContainer}>
+              <Text style={styles.storiesText}>Stories</Text>
+            </View>
+            <View style={styles.watchContainer}>
+              <Image source={watchIcon} style={styles.watchIcon} />
+              <Text style={styles.watchText}>Watch All</Text>
+            </View>
+          </View>
+          <View>
+            <Text>Placeholder for Stories</Text>
+          </View>
+        </View>
         <Button title="Logout" onPress={this.handleLogout} />
       </View>
     );
