@@ -1,9 +1,17 @@
 import React, { Component } from "react";
-import { View, Text, Button, AsyncStorage, Image } from "react-native";
+import {
+  View,
+  Text,
+  Button,
+  AsyncStorage,
+  Image,
+  ScrollView
+} from "react-native";
 import { styles } from "./HomeStyles";
-import Nav from "./components/nav/Nav";
+import Nav from "./../../components/Nav/Nav";
 
 import { Divider } from "react-native-elements";
+import BottomNav from "./../../components/BottomNav/BottomNav";
 import watchIcon from "./../../assets/images/watchIcon.png";
 
 class Home extends Component {
@@ -39,7 +47,10 @@ class Home extends Component {
             <Text>Placeholder for Stories</Text>
           </View>
         </View>
-        <Button title="Logout" onPress={this.handleLogout} />
+        <ScrollView>
+          <Button title="Logout" onPress={this.handleLogout} />
+        </ScrollView>
+        <BottomNav />
       </View>
     );
   }
