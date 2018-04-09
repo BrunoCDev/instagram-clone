@@ -11,5 +11,10 @@ export const styles = MediaQueryStyleSheet.create({
   icons: {
     height: 35,
     width: 35
+  },
+  divider: {
+    height: 2,
+    backgroundColor: "#e8e8e8",
+    marginBottom: 10
   }
 });
