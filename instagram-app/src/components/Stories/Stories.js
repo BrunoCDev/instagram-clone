@@ -14,44 +14,41 @@ class Stories extends Component {
     super();
     this.state = {
       data: [
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png",
-        "https://facebook.github.io/react-native/docs/assets/favicon.png"
-      ],
-      names: [
-        "You",
-        "testname",
-        "larry",
-        "You",
-        "testname",
-        "larry",
-        "You",
-        "testname",
-        "larry",
-        "You",
-        "testname",
-        "larry",
-        "You",
-        "testname",
-        "larry",
-        "You",
-        "testname",
-        "larry"
+        {
+          image:
+            "https://facebook.github.io/react-native/docs/assets/favicon.png",
+          name: "you"
+        },
+        {
+          image:
+            "https://facebook.github.io/react-native/docs/assets/favicon.png",
+          name: "name"
+        },
+        {
+          image:
+            "https://facebook.github.io/react-native/docs/assets/favicon.png",
+          name: "testname"
+        },
+        {
+          image:
+            "https://facebook.github.io/react-native/docs/assets/favicon.png",
+          name: "anothertestl"
+        },
+        {
+          image:
+            "https://facebook.github.io/react-native/docs/assets/favicon.png",
+          name: "you"
+        },
+        {
+          image:
+            "https://facebook.github.io/react-native/docs/assets/favicon.png",
+          name: "you"
+        },
+        {
+          image:
+            "https://facebook.github.io/react-native/docs/assets/favicon.png",
+          name: "you"
+        }
       ]
     };
   }
@@ -64,24 +61,20 @@ class Stories extends Component {
             {this.state.data
               ? this.state.data.map((el, i) => {
                   return (
-                    <View key={i} style={styles.imageDivider}>
-                      <Image
-                        style={styles.imageActive}
-                        source={{
-                          uri: el
-                        }}
-                      />
-                    </View>
-                  );
-                })
-              : null}
-          </View>
-          <View style={styles.nameContainer}>
-            {this.state.names
-              ? this.state.names.map((el, i) => {
-                  return (
                     <View key={i}>
-                      <Text style={styles.name}>{el}</Text>
+                      <View style={styles.imageDivider}>
+                        <Image
+                          style={styles.imageActive}
+                          source={{
+                            uri: el.image
+                          }}
+                        />
+                      </View>
+                      <Text style={styles.name}>
+                        {el.name.length > 9
+                          ? el.name.slice(0, 8) + ".."
+                          : el.name}
+                      </Text>
                     </View>
                   );
                 })
