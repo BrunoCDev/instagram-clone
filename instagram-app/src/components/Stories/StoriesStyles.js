@@ -5,12 +5,25 @@ export const styles = StyleSheet.create({
     marginTop: 20,
     flexDirection: "row"
   },
+  nameContainer: {
+    flexDirection: "row"
+  },
   imageActive: {
-    width: 45,
-    height: 45,
+    width: 50,
+    height: 50,
     borderRadius: 30,
-    borderWidth: 1.5,
+    borderWidth: 5
+  },
+  imageDivider: {
+    marginLeft: 15,
+    borderRadius: 30,
+    borderWidth: 2,
     borderColor: "red",
-    marginLeft: 15
+    padding: 2
+  },
+  name: {
+    color: "black",
+    fontSize: 12,
+    marginLeft: 35
   }
 });

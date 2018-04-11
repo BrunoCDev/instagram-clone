@@ -10,6 +10,11 @@ export const styles = MediaQueryStyleSheet.create({
     height: 2,
     backgroundColor: "#e8e8e8"
   },
+  dividerStories: {
+    height: 0.5,
+    backgroundColor: "#e8e8e8",
+    marginTop: 10
+  },
   storiesContainer: {
     height: 100
   },

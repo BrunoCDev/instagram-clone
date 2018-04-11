@@ -47,9 +47,10 @@ class Home extends Component {
           <View>
             <Stories />
           </View>
+          <Divider style={styles.dividerStories} />
         </View>
         <ScrollView>
-          <Button title="Logout" onPress={this.handleLogout} />
+          {/* <Button title="Logout" onPress={this.handleLogout} /> */}
         </ScrollView>
         <BottomNav />
       </View>
