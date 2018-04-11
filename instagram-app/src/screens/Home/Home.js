@@ -13,6 +13,7 @@ import Nav from "./../../components/Nav/Nav";
 import { Divider } from "react-native-elements";
 import BottomNav from "./../../components/BottomNav/BottomNav";
 import watchIcon from "./../../assets/images/watchIcon.png";
+import Stories from "./../../components/Stories/Stories";
 
 class Home extends Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class Home extends Component {
             </View>
           </View>
           <View>
-            <Text>Placeholder for Stories</Text>
+            <Stories />
           </View>
         </View>
         <ScrollView>
