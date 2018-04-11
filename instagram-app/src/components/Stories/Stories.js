@@ -1,18 +1,35 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image, TouchableWithoutFeedback } from "react-native";
 // import LinearGradient from "react-native-linear-gradient";
 import { styles } from "./StoriesStyles";
 
 class Stories extends Component {
+  constructor() {
+    super();
+    this.state = {
+      data: [
+        "https://facebook.github.io/react-native/docs/assets/favicon.png",
+        "https://facebook.github.io/react-native/docs/assets/favicon.png"
+      ]
+    };
+  }
+
   render() {
     return (
-      <View>
-        {/* <LinearGradient
-          colors={["#4c669f", "#3b5998", "#192f6a"]}
-          style={styles.linearGradient}
-        >
-          <Text style={styles.buttonText}>Sign in with Facebook</Text>
-        </LinearGradient> */}
+      <View style={styles.container}>
+        {this.state.data
+          ? this.state.data.map((el, i) => {
+              return (
+                <Image
+                  key={i}
+                  style={styles.imageActive}
+                  source={{
+                    uri: el
+                  }}
+                />
+              );
+            })
+          : null}
       </View>
     );
   }

@@ -1,18 +1,16 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  linearGradient: {
-    flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderRadius: 5
+  container: {
+    marginTop: 20,
+    flexDirection: "row"
   },
-  buttonText: {
-    fontSize: 18,
-    fontFamily: "Gill Sans",
-    textAlign: "center",
-    margin: 10,
-    color: "#ffffff",
-    backgroundColor: "transparent"
+  imageActive: {
+    width: 45,
+    height: 45,
+    borderRadius: 30,
+    borderWidth: 1.5,
+    borderColor: "red",
+    marginLeft: 15
   }
 });
