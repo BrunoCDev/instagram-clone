@@ -3,10 +3,13 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     marginTop: 20,
-    flexDirection: "row"
+    flexDirection: "row",
+    justifyContent: "space-around"
   },
   nameContainer: {
-    flexDirection: "row"
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginLeft: 25
   },
   imageActive: {
     width: 50,
@@ -15,15 +18,16 @@ export const styles = StyleSheet.create({
     borderWidth: 5
   },
   imageDivider: {
-    marginLeft: 15,
     borderRadius: 30,
     borderWidth: 2,
     borderColor: "red",
-    padding: 2
+    padding: 2,
+    marginLeft: 15
   },
   name: {
-    color: "black",
+    color: "#3b3b3b",
     fontSize: 12,
-    marginLeft: 35
+    textAlign: "center",
+    marginLeft: 12
   }
 });
