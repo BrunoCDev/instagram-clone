@@ -14,11 +14,25 @@ import { Divider } from "react-native-elements";
 import BottomNav from "./../../components/BottomNav/BottomNav";
 import watchIcon from "./../../assets/images/watchIcon.png";
 import Stories from "./../../components/Stories/Stories";
+import Post from "./../../components/Post/Post";
 
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: [
+        {
+          image:
+            "https://facebook.github.io/react-native/docs/assets/favicon.png",
+          name: "testname",
+          postImage:
+            "https://facebook.github.io/react-native/docs/assets/favicon.png",
+          likes: 22,
+          description: "this is a test description",
+          when: "2 Hours Ago"
+        }
+      ]
+    };
     this.handleLogout = this.handleLogout.bind(this);
   }
 
@@ -49,8 +63,11 @@ class Home extends Component {
           </View>
           <Divider style={styles.dividerStories} />
         </View>
-        <ScrollView>
-          {/* <Button title="Logout" onPress={this.handleLogout} /> */}
+        {/* <Button title="Logout" onPress={this.handleLogout} /> */}
+        <ScrollView style={styles.scrollview}>
+          {this.state.data.map((post, i) => {
+            return <Post key={i} data={post} />;
+          })}
         </ScrollView>
         <BottomNav />
       </View>

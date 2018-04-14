@@ -4,7 +4,11 @@ import { MediaQueryStyleSheet } from "react-native-responsive";
 export const styles = MediaQueryStyleSheet.create({
   container: {
     flex: 1,
+    height: 100,
     backgroundColor: "#fafafa"
+  },
+  scrollview: {
+    marginTop: 40
   },
   divider: {
     height: 2,
