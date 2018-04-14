@@ -2,6 +2,9 @@ import React from "react";
 import { MediaQueryStyleSheet } from "react-native-responsive";
 
 export const styles = MediaQueryStyleSheet.create({
+  mainContainer: {
+    backgroundColor: "#fafafa"
+  },
   container: {
     backgroundColor: "#fafafa",
     flexDirection: "row",
@@ -10,10 +13,11 @@ export const styles = MediaQueryStyleSheet.create({
   },
   icons: {
     height: 35,
-    width: 35
+    width: 35,
+    backgroundColor: "#fafafa"
   },
   divider: {
-    height: 2,
+    height: 0.5,
     backgroundColor: "#e8e8e8",
     marginBottom: 10
   }

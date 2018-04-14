@@ -29,7 +29,17 @@ class Home extends Component {
             "https://facebook.github.io/react-native/docs/assets/favicon.png",
           likes: 22,
           description: "this is a test description",
-          when: "2 Hours Ago"
+          when: 2
+        },
+        {
+          image:
+            "https://facebook.github.io/react-native/docs/assets/favicon.png",
+          name: "testname",
+          postImage:
+            "https://facebook.github.io/react-native/docs/assets/favicon.png",
+          likes: 22,
+          description: "this is a test description",
+          when: 2
         }
       ]
     };
@@ -67,7 +77,7 @@ class Home extends Component {
           {/* <Button title="Logout" onPress={this.handleLogout} /> */}
           <ScrollView style={styles.scrollview}>
             {this.state.data.map((post, i) => {
-              return <Post key={i} data={post} />;
+              return <Post key={i} data={post} index={i} />;
             })}
           </ScrollView>
         </ScrollView>
