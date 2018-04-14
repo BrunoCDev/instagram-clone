@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { styles } from "./PostStyles";
 import { View, Text, Image } from "react-native";
 import PostTopNav from "./../PostTopNav/PostTopNav";
+import PostBottomNav from "./../PostBottomNav/PostBottomNav";
 
 class Post extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class Post extends Component {
       <View style={styles.container}>
         <PostTopNav data={this.state.data} />
         <Image source={{ uri: data.image }} style={styles.image} />
+        <PostBottomNav />
       </View>
     );
   }
