@@ -5,7 +5,7 @@ export const styles = MediaQueryStyleSheet.create({
   container: {
     flex: 1,
     height: 100,
-    backgroundColor: "#fafafa"
+    backgroundColor: "white"
   },
   scrollview: {
     marginTop: 40

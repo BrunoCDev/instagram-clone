@@ -5,7 +5,8 @@ export const styles = StyleSheet.create({
     height: 40,
     flexDirection: "row",
     marginLeft: 12,
-    marginTop: 5
+    marginTop: 5,
+    backgroundColor: "white"
   },
   avatar: {
     height: 28,

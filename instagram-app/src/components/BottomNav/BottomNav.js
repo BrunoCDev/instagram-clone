@@ -12,7 +12,7 @@ import profileIcon from "./../../assets/images/profileIcon.png";
 class BottomNav extends Component {
   render() {
     return (
-      <View>
+      <View style={styles.mainContainer}>
         <Divider style={styles.divider} />
         <View style={styles.container}>
           <View>
