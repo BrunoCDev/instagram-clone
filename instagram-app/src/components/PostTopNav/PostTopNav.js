@@ -7,7 +7,7 @@ class PostTopNav extends Component {
     return (
       <View style={styles.container}>
         <Image source={{ uri: this.props.data.image }} style={styles.avatar} />
-        <Text>Hello</Text>
+        <Text style={styles.name}>{this.props.data.name}</Text>
       </View>
     );
   }

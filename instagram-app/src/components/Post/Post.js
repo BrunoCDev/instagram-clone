@@ -15,6 +15,7 @@ class Post extends Component {
     return (
       <View style={styles.container}>
         <PostTopNav data={this.state.data} />
+        <Image source={{ uri: data.image }} style={styles.image} />
       </View>
     );
   }

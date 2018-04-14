@@ -48,26 +48,28 @@ class Home extends Component {
       <View style={styles.container}>
         <Nav />
         <Divider style={styles.divider} />
-        <View style={styles.storiesContainer}>
-          <View style={styles.textContainer}>
-            <View style={styles.storiesTextContainer}>
-              <Text style={styles.storiesText}>Stories</Text>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.storiesContainer}>
+            <View style={styles.textContainer}>
+              <View style={styles.storiesTextContainer}>
+                <Text style={styles.storiesText}>Stories</Text>
+              </View>
+              <View style={styles.watchContainer}>
+                <Image source={watchIcon} style={styles.watchIcon} />
+                <Text style={styles.watchText}>Watch All</Text>
+              </View>
             </View>
-            <View style={styles.watchContainer}>
-              <Image source={watchIcon} style={styles.watchIcon} />
-              <Text style={styles.watchText}>Watch All</Text>
+            <View>
+              <Stories />
             </View>
+            <Divider style={styles.dividerStories} />
           </View>
-          <View>
-            <Stories />
-          </View>
-          <Divider style={styles.dividerStories} />
-        </View>
-        {/* <Button title="Logout" onPress={this.handleLogout} /> */}
-        <ScrollView style={styles.scrollview}>
-          {this.state.data.map((post, i) => {
-            return <Post key={i} data={post} />;
-          })}
+          {/* <Button title="Logout" onPress={this.handleLogout} /> */}
+          <ScrollView style={styles.scrollview}>
+            {this.state.data.map((post, i) => {
+              return <Post key={i} data={post} />;
+            })}
+          </ScrollView>
         </ScrollView>
         <BottomNav />
       </View>
