@@ -2,19 +2,25 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
-    height: 50,
+    height: 40,
     flexDirection: "row",
     marginLeft: 12,
     marginTop: 5
   },
   avatar: {
-    height: 25,
-    width: 25,
+    height: 28,
+    width: 28,
     borderRadius: 30
   },
   name: {
     color: "black",
     marginLeft: 5,
-    marginTop: 1
+    marginTop: 3
+  },
+  menu: {
+    height: 25,
+    width: 15,
+    position: "absolute",
+    right: 15
   }
 });
