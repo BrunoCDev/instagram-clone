@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { styles } from "./NavStyles";
-import camera from "./../../assets/images/cameraIcon.png";
-import instagramIcon from "./../../assets/images/instagramIcon.png";
-import dm from "./../../assets/images/dm.png";
+import camera from "./../../../../assets/images/cameraIcon.png";
+import instagramIcon from "./../../../../assets/images/instagramIcon.png";
+import dm from "./../../../../assets/images/dm.png";
 
 import { View, Text, Image } from "react-native";
 

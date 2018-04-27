@@ -8,7 +8,8 @@ import {
   ScrollView
 } from "react-native";
 import { styles } from "./HomeStyles";
-import Nav from "./../../components/Nav/Nav";
+import Nav from "./components/Nav/Nav";
+import { connect } from "react-redux";
 
 import { Divider } from "react-native-elements";
 import BottomNav from "./../../components/BottomNav/BottomNav";
@@ -74,17 +75,19 @@ class Home extends Component {
             </View>
             <Divider style={styles.dividerStories} />
           </View>
-          {/* <Button title="Logout" onPress={this.handleLogout} /> */}
           <ScrollView style={styles.scrollview}>
             {this.state.data.map((post, i) => {
               return <Post key={i} data={post} index={i} />;
             })}
           </ScrollView>
         </ScrollView>
-        <BottomNav />
+        <Button title="Logout" onPress={this.handleLogout} />
+        <BottomNav page={"Home"} navigate={this.props.navigation.navigate} />
       </View>
     );
   }
 }
 
-export default Home;
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps)(Home);
