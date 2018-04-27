@@ -8,6 +8,7 @@ import {
 } from "react-native";
 // import LinearGradient from "react-native-linear-gradient";
 import { styles } from "./StoriesStyles";
+import { connect } from "react-redux";
 
 class Stories extends Component {
   constructor() {
@@ -86,4 +87,6 @@ class Stories extends Component {
   }
 }
 
-export default Stories;
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps)(Stories);

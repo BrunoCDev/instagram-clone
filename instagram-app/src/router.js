@@ -6,6 +6,7 @@ import CreateAccount from "./screens/CreateAccount/CreateAccount";
 import Home from "./screens/Home/Home";
 import Welcome from "./screens/Welcome/Welcome";
 import UsernameChange from "./screens/UsernameChange/UsernameChange";
+import Profile from "./screens/Profile/Profile";
 
 export const createRootNavigator = (signedIn = false) => {
   return StackNavigator(
@@ -15,14 +16,14 @@ export const createRootNavigator = (signedIn = false) => {
         navigationOptions: {
           gesturesEnabled: false
         },
-        initialRouteName: signedIn ? "Home" : "LogIn"
+        initialRouteName: signedIn ? "Profile" : "LogIn"
       },
       SignedOut: {
         screen: SignedOut,
         navigationOptions: {
           gesturesEnabled: false
         },
-        initialRouteName: !signedIn ? "LogIn" : "Home"
+        initialRouteName: !signedIn ? "LogIn" : "Profile"
       }
     },
     {
@@ -67,6 +68,12 @@ export const SignedOut = StackNavigator({
 });
 
 export const SignedIn = StackNavigator({
+  Profile: {
+    screen: Profile,
+    navigationOptions: {
+      headerStyle: { height: 0 }
+    }
+  },
   Home: {
     screen: Home,
     navigationOptions: {
