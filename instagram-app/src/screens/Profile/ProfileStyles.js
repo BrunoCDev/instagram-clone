@@ -3,8 +3,10 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: 100,
     backgroundColor: "white"
+  },
+  scrollContainer: {
+    flex: 1
   },
   divider: {
     height: 2,

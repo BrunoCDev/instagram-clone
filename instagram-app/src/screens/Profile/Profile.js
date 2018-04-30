@@ -17,7 +17,7 @@ class Profile extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView>
+        <ScrollView style={styles.scrollContainer}>
           <TopNav name={this.state.name} />
           <Divider style={styles.divider} />
           <Details />
