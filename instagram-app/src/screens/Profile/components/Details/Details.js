@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Image } from "react-native";
+import Button from "apsl-react-native-button";
 import { styles } from "./DetailsStyles";
 
 class Details extends Component {
@@ -17,12 +18,40 @@ class Details extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image source={{ uri: this.state.image }} style={styles.avatar} />
-        <Text>{this.state.posts}</Text>
-        <Text>{this.state.followers}</Text>
-        <Text>{this.state.following}</Text>
-        <Text>{this.state.name}</Text>
-        <Text>{this.state.description}</Text>
+        {/*  */}
+        <View style={styles.firstContainer}>
+          {/*  */}
+          <View style={styles.imageContainer}>
+            <Image source={{ uri: this.state.image }} style={styles.image} />
+          </View>
+          <View style={styles.infoContainer}>
+            <View style={styles.statsContainer}>
+              <View style={styles.textContainer}>
+                <Text style={styles.statsText}>{this.state.posts}</Text>
+                <Text>posts</Text>
+              </View>
+              <View style={styles.textContainer}>
+                <Text style={styles.statsText}>{this.state.followers}</Text>
+                <Text>followers</Text>
+              </View>
+              <View style={styles.textContainer}>
+                <Text style={styles.statsText}>{this.state.following}</Text>
+                <Text>following</Text>
+              </View>
+            </View>
+            <View style={styles.buttonContainer}>
+              <Button style={styles.button}>
+                <Text style={styles.buttonText}>Edit Profile</Text>
+              </Button>
+            </View>
+          </View>
+        </View>
+        {/*  */}
+        <View style={styles.thirdContainer}>
+          <Text>{this.state.fullName}</Text>
+          <Text>{this.state.description}</Text>
+        </View>
+        {/*  */}
       </View>
     );
   }
