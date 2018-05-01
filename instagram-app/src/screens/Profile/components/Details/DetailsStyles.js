@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white"
   },
-  firstContainer: {
+  mainContainer: {
     flexDirection: "row",
     backgroundColor: "white"
   },
@@ -54,5 +54,31 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "black",
     fontSize: 16
+  },
+  nameContainer: {
+    marginLeft: 20
+  },
+  nameText: {
+    color: "black",
+    fontWeight: "bold",
+    fontSize: 17
+  },
+  descriptionText: {
+    color: "black",
+    fontSize: 14
+  },
+  divider: {
+    marginTop: 15,
+    height: 1.5,
+    backgroundColor: "#e8e8e8"
+  },
+  postContainer: {
+    width: 115,
+    height: 115,
+    margin: 2
+  },
+  postImage: {
+    width: 115,
+    height: 115
   }
 });
