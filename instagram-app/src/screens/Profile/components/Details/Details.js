@@ -4,6 +4,8 @@ import Button from "apsl-react-native-button";
 import { Divider } from "react-native-elements";
 import { styles } from "./DetailsStyles";
 
+import Menu from "./components/Menu/Menu";
+
 class Details extends Component {
   constructor() {
     super();
@@ -68,6 +70,7 @@ class Details extends Component {
         </View>
         {/*  */}
         <Divider style={styles.divider} />
+        <Menu />
         <ScrollView showsVerticalScrollIndicator={false}>
           <FlatList
             numColumns={3}
